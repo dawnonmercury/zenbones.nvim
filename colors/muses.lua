@@ -31,6 +31,9 @@ else
 		water = hsluv "#88aaff",
 		blossom = hsluv "#be95cc",
 		sky = hsluv "#85adad",
+		storm = hsluv "#773443",
+		depths = hsluv "#445577",
+		chaos - hsluv "#435656"
 	}, bg)
 end
 
@@ -41,9 +44,9 @@ local base_specs = generator.generate(palette, bg, generator.get_global_config(c
 -- Optionally extend specs using Lush
 local specs = lush.extends({ base_specs }).with(function()
 	return {
-		Statement { base_specs.Statement, fg = palette.rose },
-		Special { fg = palette.water },
-		Type { fg = palette.sky, gui = "italic" },
+		Statement { base_specs.Statement, bg = palette.storm },
+		Special { fg = palette.depths },
+		Type { fg = palette.chaos, gui = "italic" },
 	}
 end)
 
