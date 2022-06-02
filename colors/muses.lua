@@ -34,9 +34,9 @@ else
 		water = hsluv "#3366bb",
 		blossom = hsluv "#9243aa",
 		sky = hsluv "#578989",
-		storm = hsluv "#545454",
-		depths = hsluv "#494949",
-		chaos = hsluv "#3b3b3b",
+		storm = hsluv "#4b4949",
+		depths = hsluv "#4b4b49",
+		chaos = hsluv "#4b4b4b",
 	}, "dark")
 end
 
