@@ -45,8 +45,8 @@ local base_specs = generator.generate(palette, bg, generator.get_global_config(c
 local specs = lush.extends({ base_specs }).with(function()
 	return {
 		Statement { base_specs.Statement, bg = palette.storm },
-		Special { fg = palette.depths },
-		Type { fg = palette.chaos, gui = "italic" },
+		Special { bg = palette.depths },
+		Type { bg = palette.chaos, gui = "italic" },
 	}
 end)
 
