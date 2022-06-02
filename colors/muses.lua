@@ -33,7 +33,7 @@ else
 		sky = hsluv "#85adad",
 		storm = hsluv "#773443",
 		depths = hsluv "#445577",
-		chaos - hsluv "#435656"
+		chaos - hsluv "#435656",
 	}, bg)
 end
 
