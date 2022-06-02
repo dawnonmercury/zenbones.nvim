@@ -50,7 +50,7 @@ local specs = lush.extends({ base_specs }).with(function()
 		Statement { base_specs.Statement, bg = palette.storm },
 		Special { bg = palette.depths },
 		Type { bg = palette.chaos, gui = "italic" },
-		Identifier { bg = palette.chaos, gui = "regular" },
+		Identifier { gui = "regular" },
 	}
 end)
 
