@@ -1,5 +1,5 @@
 local colors_name = "muses"
-vim.g.colors_name = muses -- Required when defining a colorscheme
+vim.g.colors_name = "muses" -- Required when defining a colorscheme
 
 local lush = require "lush"
 local hsluv = lush.hsluv -- Human-friendly hsl
