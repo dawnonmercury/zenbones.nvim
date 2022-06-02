@@ -23,7 +23,7 @@ if bg == "light" then
 		storm = hsluv "#ff7eb6",
 		depth = hsluv "#88aaff",
 		chaos = hsluv "#85adad",
-	}, bg)
+	}, "light")
 else
 	palette = util.palette_extend({
 		bg = hsluv "#181818",
@@ -37,7 +37,7 @@ else
 		storm = hsluv "#883443",
 		depths = hsluv "#445577",
 		chaos = hsluv "#435656",
-	}, bg)
+	}, "dark")
 end
 
 -- Generate the lush specs using the generator util
@@ -56,6 +56,3 @@ end)
 
 -- Pass the specs to lush to apply
 lush(specs)
-
--- Optionally set term colors
-require("zenbones.term").apply_colors(palette)
