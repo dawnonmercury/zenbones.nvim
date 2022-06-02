@@ -21,7 +21,7 @@ if bg == "light" then
 		blossom = hsluv "#782488",
 		sky = hsluv "#126767",
 		storm = hsluv "#c2b2b2",
-		depth = hsluv "#c9c9c9",
+		depths = hsluv "#c9c9c9",
 		chaos = hsluv "#d2c2c2",
 	}, "light")
 else
