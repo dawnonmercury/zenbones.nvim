@@ -20,9 +20,9 @@ if bg == "light" then
 		water = hsluv "#334488",
 		blossom = hsluv "#782488",
 		sky = hsluv "#126767",
-		storm = hsluv "#b6a4a2",
-		depth = hsluv "#c1b5b3",
-		chaos = hsluv "#d2c6c4",
+		storm = hsluv "#c2b2b2",
+		depth = hsluv "#c9c9c9",
+		chaos = hsluv "#d2c2c2",
 	}, "light")
 else
 	palette = util.palette_extend({
