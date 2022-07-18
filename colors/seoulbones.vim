@@ -30,6 +30,7 @@ if &background ==# 'dark'
     let g:terminal_color_13 = '#B2B3DA'
     let g:terminal_color_14 = '#6BCACB'
     let g:terminal_color_15 = '#A8A8A8'
+    highlight Normal guifg=#DDDDDD guibg=#4B4B4B guisp=NONE gui=NONE cterm=NONE
     highlight Bold guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
     highlight! link LightspeedUnlabeledMatch Bold
     highlight! link TSStrong Bold
@@ -147,11 +148,10 @@ if &background ==# 'dark'
     highlight! link Question MoreMsg
     highlight NeogitHunkHeaderHighlight guifg=#DDDDDD guibg=#525252 guisp=NONE gui=bold cterm=bold
     highlight! link NnnNormalNC NnnNormal
-    highlight NnnVertSplit guifg=bg guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    highlight! link NnnVertSplit NnnWinSeparator
     highlight NonText guifg=#7C7C7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
     highlight! link EndOfBuffer NonText
     highlight! link Whitespace NonText
-    highlight Normal guifg=#DDDDDD guibg=#4B4B4B guisp=NONE gui=NONE cterm=NONE
     highlight NormalFloat guifg=NONE guibg=#5C5C5C guisp=NONE gui=NONE cterm=NONE
     highlight Number guifg=#F7E0B3 guibg=NONE guisp=NONE gui=italic cterm=italic
     highlight! link Boolean Number
@@ -165,13 +165,15 @@ if &background ==# 'dark'
     highlight NvimTreeRootFolder guifg=#97BDDE guibg=NONE guisp=NONE gui=bold cterm=bold
     highlight NvimTreeSpecialFile guifg=#A5A6C5 guibg=NONE guisp=NONE gui=underline cterm=underline
     highlight NvimTreeSymlink guifg=#97BDDE guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    highlight NvimTreeVertSplit guifg=bg guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    highlight NvimTreeWinSeparator guifg=bg guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    highlight! link NnnWinSeparator NvimTreeWinSeparator
     highlight Pmenu guifg=NONE guibg=#5C5C5C guisp=NONE gui=NONE cterm=NONE
     highlight PmenuSbar guifg=NONE guibg=#818181 guisp=NONE gui=NONE cterm=NONE
     highlight PmenuSel guifg=NONE guibg=#6F6F6F guisp=NONE gui=NONE cterm=NONE
     highlight PmenuThumb guifg=NONE guibg=#A0A0A0 guisp=NONE gui=NONE cterm=NONE
     highlight PreProc guifg=#D590A3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
     highlight Search guifg=#DDDDDD guibg=#8283AD guisp=NONE gui=NONE cterm=NONE
+    highlight! link CocSearch Search
     highlight! link MatchParen Search
     highlight! link Sneak Search
     highlight! link LightspeedPendingOpArea SneakLabel
@@ -213,6 +215,7 @@ if &background ==# 'dark'
     highlight Underlined guifg=NONE guibg=NONE guisp=NONE gui=underline cterm=underline
     highlight! link TSUnderline Underlined
     highlight VertSplit guifg=#868686 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    highlight! link WinSeparator VertSplit
     highlight Visual guifg=NONE guibg=#777777 guisp=NONE gui=NONE cterm=NONE
     highlight WarningMsg guifg=#FFDF9B guibg=NONE guisp=NONE gui=NONE cterm=NONE
     highlight! link DiagnosticWarn WarningMsg
@@ -281,6 +284,7 @@ else
     let g:terminal_color_13 = '#7F4C7E'
     let g:terminal_color_14 = '#006F70'
     let g:terminal_color_15 = '#777777'
+    highlight Normal guifg=#555555 guibg=#E2E2E2 guisp=NONE gui=NONE cterm=NONE
     highlight Bold guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
     highlight! link LightspeedUnlabeledMatch Bold
     highlight! link TSStrong Bold
@@ -398,11 +402,10 @@ else
     highlight! link Question MoreMsg
     highlight NeogitHunkHeaderHighlight guifg=#555555 guibg=#DADADA guisp=NONE gui=bold cterm=bold
     highlight! link NnnNormalNC NnnNormal
-    highlight NnnVertSplit guifg=bg guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    highlight! link NnnVertSplit NnnWinSeparator
     highlight NonText guifg=#A6A6A6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
     highlight! link EndOfBuffer NonText
     highlight! link Whitespace NonText
-    highlight Normal guifg=#555555 guibg=#E2E2E2 guisp=NONE gui=NONE cterm=NONE
     highlight NormalFloat guifg=NONE guibg=#CFCFCF guisp=NONE gui=NONE cterm=NONE
     highlight Number guifg=#896500 guibg=NONE guisp=NONE gui=italic cterm=italic
     highlight! link Boolean Number
@@ -416,13 +419,15 @@ else
     highlight NvimTreeRootFolder guifg=#0084A3 guibg=NONE guisp=NONE gui=bold cterm=bold
     highlight NvimTreeSpecialFile guifg=#896788 guibg=NONE guisp=NONE gui=underline cterm=underline
     highlight NvimTreeSymlink guifg=#0084A3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-    highlight NvimTreeVertSplit guifg=bg guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    highlight NvimTreeWinSeparator guifg=bg guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    highlight! link NnnWinSeparator NvimTreeWinSeparator
     highlight Pmenu guifg=NONE guibg=#C9C9C9 guisp=NONE gui=NONE cterm=NONE
     highlight PmenuSbar guifg=NONE guibg=#9E9E9E guisp=NONE gui=NONE cterm=NONE
     highlight PmenuSel guifg=NONE guibg=#B0B0B0 guisp=NONE gui=NONE cterm=NONE
     highlight PmenuThumb guifg=NONE guibg=#F3F3F3 guisp=NONE gui=NONE cterm=NONE
     highlight PreProc guifg=#BE6A84 guibg=NONE guisp=NONE gui=NONE cterm=NONE
     highlight Search guifg=#555555 guibg=#CBB1CA guisp=NONE gui=NONE cterm=NONE
+    highlight! link CocSearch Search
     highlight! link MatchParen Search
     highlight! link Sneak Search
     highlight! link LightspeedPendingOpArea SneakLabel
@@ -464,6 +469,7 @@ else
     highlight Underlined guifg=NONE guibg=NONE guisp=NONE gui=underline cterm=underline
     highlight! link TSUnderline Underlined
     highlight VertSplit guifg=#919191 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+    highlight! link WinSeparator VertSplit
     highlight Visual guifg=NONE guibg=#CCCCCC guisp=NONE gui=NONE cterm=NONE
     highlight WarningMsg guifg=#C48562 guibg=NONE guisp=NONE gui=NONE cterm=NONE
     highlight! link DiagnosticWarn WarningMsg
