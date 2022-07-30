@@ -21,8 +21,6 @@ if bg == "light" then
 		blossom = hsluv "#782488",
 		sky = hsluv "#126767",
 		storm = hsluv "#d2c2c2",
-		depths = hsluv "#d5d5c5",
-		chaos = hsluv "#d9d9d9",
 	}, "light")
 else
 	palette = util.palette_extend({
@@ -35,8 +33,6 @@ else
 		blossom = hsluv "#9243aa",
 		sky = hsluv "#578989",
 		storm = hsluv "#4b4949",
-		depths = hsluv "#4b4b49",
-		chaos = hsluv "#4b4b4b",
 	}, "dark")
 end
 
@@ -48,8 +44,8 @@ local base_specs = generator.generate(palette, bg, generator.get_global_config(c
 local specs = lush.extends({ base_specs }).with(function()
 	return {
 		Statement { base_specs.Statement, bg = palette.storm },
-		Special { bg = palette.depths },
-		Type { bg = palette.chaos, gui = "italic" },
+		Special { bg = palette.storm, gui = "underline" },
+		Type { bg = palette.storm, gui = "italic" },
 		Identifier { gui = "regular" },
 	}
 end)
