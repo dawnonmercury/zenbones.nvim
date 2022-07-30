@@ -32,7 +32,7 @@ else
 		water = hsluv "#3366bb",
 		blossom = hsluv "#9243aa",
 		sky = hsluv "#578989",
-		storm = hsluv "#282828",
+		storm = hsluv "#2f2f2f",
 	}, "dark")
 end
 
