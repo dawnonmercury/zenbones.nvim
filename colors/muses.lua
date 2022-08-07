@@ -13,7 +13,7 @@ local palette
 if bg == "light" then
 	palette = util.palette_extend({
 		bg = hsluv "#f3efed",
-		fg = hsluv "#282828",
+		fg = hsluv "#484141",
 		rose = hsluv "#bb2354",
 		leaf = hsluv "#549b46",
 		wood = hsluv "#989825",
