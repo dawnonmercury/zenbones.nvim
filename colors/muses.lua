@@ -14,12 +14,12 @@ if bg == "light" then
 	palette = util.palette_extend({
 		bg = hsluv "#f3efed",
 		fg = hsluv "#484141",
-		rose = hsluv "#bb2354",
-		leaf = hsluv "#549b46",
-		wood = hsluv "#989825",
-		water = hsluv "#334488",
-		blossom = hsluv "#782488",
-		sky = hsluv "#126767",
+		rose = hsluv "#dd4576",
+		leaf = hsluv "#65ac57",
+		wood = hsluv "#baba37",
+		water = hsluv "#5566aa",
+		blossom = hsluv "#9a46aa",
+		sky = hsluv "#56abab",
 		storm = hsluv "#d2c9c9",
 	}, "light")
 else
