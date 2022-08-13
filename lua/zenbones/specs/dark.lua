@@ -339,6 +339,7 @@ local function generate(p, opt)
 			CocHintHighlight                 { DiagnosticUnderlineHint },
 			CocErrorVirtualText              { DiagnosticVirtualTextError },
 			CocWarningVitualText             { DiagnosticVirtualTextWarn },
+			CocMenuSel                       { CursorLine },
 			CocSelectedText                  { SpellBad },
 			CocCodeLens                      { LineNr },
 			CocMarkdownLink                  { fg = p.sky, gui = "underline" },
@@ -385,6 +386,18 @@ local function generate(p, opt)
 			NnnNormalNC                      { NnnNormal },
 			NnnWinSeparator                  { NvimTreeWinSeparator },
 			NnnVertSplit                     { NnnWinSeparator },
+
+			MasonHighlight                   { fg = p.water },
+			MasonHighlightBlock				 { fg = p1.bg, bg = MasonHighlight.fg },
+			MasonHighlightBlockBold 		 { MasonHighlightBlock, gui = "bold" },
+			MasonHighlightSecondary          { fg = p.wood },
+			MasonHighlightBlockSecondary     { fg = p1.bg, bg = MasonHighlightSecondary.fg },
+			MasonHighlightBlockBoldSecondary { MasonHighlightBlockSecondary, gui = "bold" },
+			MasonMuted	                     { fg = p1.fg4 },
+			MasonMutedBlock	                 { fg = p1.bg, bg = MasonMuted.fg },
+			MasonMutedBlockBold	             { MasonMutedBlock, gui = "bold" },
+			MasonHeader	                     { fg = p1.bg, bg = p.wood, gui = "bold" },
+			MasonError                       { Error },
 		}
 	end)
 	-- stylua: ignore end
