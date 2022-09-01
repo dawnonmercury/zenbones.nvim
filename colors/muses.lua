@@ -43,10 +43,10 @@ local base_specs = generator.generate(palette, bg, generator.get_global_config(c
 -- Optionally extend specs using Lush
 local specs = lush.extends({ base_specs }).with(function()
 	return {
-		Statement { base_specs.Statement, bg = palette.storm, gui = "italic" },
-		Special { bg = palette.storm },
-		Type { bg = palette.storm, gui = "underline" },
-		Identifier { gui = "regular" },
+		Statement { bg = palette.storm, gui = "regular" },
+		Special { base_specs.Special, gui = "italic" },
+		Type { base_specs.Type, gui = "underline" },
+		Identifier { base_specs.Identifier, bg = palette.storm },
 	}
 end)
 
