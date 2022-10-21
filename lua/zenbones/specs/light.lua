@@ -1,5 +1,6 @@
 local lush = require "lush"
 
+
 local function generate(p, opt)
 	local p1 = {
 		bg = p.bg,
@@ -68,7 +69,7 @@ local function generate(p, opt)
 			LineNr          { fg = p1.bg.da(opt.darken_line_nr or 33), bg = opt.solid_line_nr and p1.bg.da(4) or "NONE" }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 			SignColumn      { LineNr }, -- column where |signs| are displayed
 			FoldColumn      { LineNr, gui = "bold" }, -- 'foldcolumn'
-			Folded          { bg = p1.bg.da(16), fg = p1.bg.da(64) }, -- line used for closed folds
+			Folded          { bg = not opt.transparent_background and p1.bg.da(16) or "NONE", fg = p1.bg.da(64) }, -- line used for closed folds
 			CursorLineNr    { LineNr, fg = p.fg, gui = "bold" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 
 			-- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -307,22 +308,15 @@ local function generate(p, opt)
 			SneakLabel                       { WildMenu },
 			SneakLabelMask                   { bg = p.blossom, fg = p.blossom },
 
-			LightspeedLabel                  { fg = p.blossom, gui = "bold,underline" },
-			LightspeedLabelOverlapped        { fg = p.blossom, gui = "underline" },
-			LightspeedLabelDistant           { fg = p.sky, gui = "bold,underline" },
-			LightspeedLabelDistantOverlapped { fg = p.sky, gui = "underline" },
-			LightspeedShortcut               { SneakLabel, gui = "bold,underline" },
-			LightspeedOneCharMatch           { SneakLabel, gui = "bold" },
-			LightspeedMaskedChar             { Conceal },
-			LightspeedUnlabeledMatch         { Bold },
-			LightspeedPendingOpArea          { SneakLabel },
-			LightspeedPendingChangeOpArea    { fg = p.blossom },
-			LightspeedGreyWash               { fg = Comment.fg },
+			LeapMatch                        { gui = "bold,underline,nocombine" },
+			LeapLabelPrimary                 { Search , gui = "bold,nocombine" },
+			LeapLabelSecondary               { DiffText, gui = "bold,nocombine" },
+			LeapLabelSelected                { IncSearch },
 
-			HopNextKey                       { LightspeedLabel },
-			HopNextKey1                      { LightspeedLabelDistant },
+			HopNextKey                       { fg = p.blossom, gui = "bold,underline" },
+			HopNextKey1                      { fg = p.sky, gui = "bold,underline" },
 			HopNextKey2                      { fg = p.water },
-			HopUnmatched                     { LightspeedGreyWash } ,
+			HopUnmatched                     { fg = Comment.fg },
 
 			BufferCurrent                    { TabLineSel },
 			BufferVisible                    { fg = StatusLineNC.fg },
@@ -422,46 +416,6 @@ local function generate(p, opt)
 			---@diagnostic enable: undefined-global
 		)
 	end
-
-	-- stylua: ignore start
-	if not vim.diagnostic then
-		table.insert(
-			specs,
-			---@diagnostic disable: undefined-global
-			-- selene: allow(undefined_variable)
-			lush(function()
-				return {
-					LspDiagnosticsDefaultError              { base.DiagnosticError }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-					LspDiagnosticsDefaultWarning            { base.DiagnosticWarn }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-					LspDiagnosticsDefaultInformation        { base.DiagnosticInfo }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-					LspDiagnosticsDefaultHint               { base.DiagnosticHint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-
-					LspDiagnosticsVirtualTextError          { base.DiagnosticVirtualTextError }, -- Used for "Error" diagnostic virtual text
-					LspDiagnosticsVirtualTextWarning        { base.DiagnosticVirtualTextWarn }, -- Used for "Warning" diagnostic virtual text
-					LspDiagnosticsVirtualTextInformation    { base.DiagnosticVirtualTextInfo }, -- Used for "Information" diagnostic virtual text
-					LspDiagnosticsVirtualTextHint           { base.DiagnosticVirtualTextHint }, -- Used for "Hint" diagnostic virtual text
-
-					LspDiagnosticsUnderlineError            { base.DiagnosticUnderlineError }, -- Used to underline "Error" diagnostics
-					LspDiagnosticsUnderlineWarning          { base.DiagnosticUnderlineWarn }, -- Used to underline "Warning" diagnostics
-					LspDiagnosticsUnderlineInformation      { base.DiagnosticUnderlineInfo }, -- Used to underline "Information" diagnostics
-					LspDiagnosticsUnderlineHint             { base.DiagnosticUnderlineHint }, -- Used to underline "Hint" diagnostics
-
-					-- LspDiagnosticsFloatingError          { }, -- Used to color "Error" diagnostic messages in diagnostics float
-					-- LspDiagnosticsFloatingWarning        { }, -- Used to color "Warning" diagnostic messages in diagnostics float
-					-- LspDiagnosticsFloatingInformation    { }, -- Used to color "Information" diagnostic messages in diagnostics float
-					-- LspDiagnosticsFloatingHint           { }, -- Used to color "Hint" diagnostic messages in diagnostics float
-
-					LspDiagnosticsSignError                 { base.DiagnosticSignError }, -- Used for "Error" signs in sign column
-					LspDiagnosticsSignWarning               { base.DiagnosticSignWarn }, -- Used for "Warning" signs in sign column
-					LspDiagnosticsSignInformation           { base.DiagnosticSignInfo }, -- Used for "Information" signs in sign column
-					LspDiagnosticsSignHint                  { base.DiagnosticSignHint }, -- Used for "Hint" signs in sign column
-				}
-			end)
-			-- selene: deny(undefined_variable)
-			---@diagnostic enable: undefined-global
-		)
-	end
-	-- stylua: ignore end
 
 	return lush.merge(specs)
 end
