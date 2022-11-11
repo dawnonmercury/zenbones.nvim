@@ -3,6 +3,10 @@
 A collection of Vim/Neovim colorschemes designed to highlight code using
 contrasts and font variations.
 
+## Requirement
+
+-   Neovim v0.8.0 (use v2.0.0 for older versions) or Vim 8.1
+
 ## Usage
 
 Just apply the colorscheme as usual:
@@ -162,7 +166,7 @@ local lush = require "lush"
 local hsluv = lush.hsluv -- Human-friendly hsl
 local util = require "zenbones.util"
 
-local bg = vim.opt.background:get()
+local bg = vim.o.background
 
 -- Define a palette. Use `palette_extend` to fill unspecified colors
 -- Based on https://github.com/gruvbox-community/gruvbox#palette
